@@ -5,9 +5,9 @@ public class BooleanTest {
 	public static void main(String[] args) {
 		boolean b1 = true;
 		if (b1) {
-			System.out.println("ì°¸ìž…ë‹ˆë‹¤.");
+			System.out.println("Âü.");
 		} else {
-			System.out.println("ê±°ì§“ìž…ë‹ˆë‹¤.");
+			System.out.println("°ÅÁþ.");
 		}
 	}
 
