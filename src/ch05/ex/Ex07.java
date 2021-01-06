@@ -1,5 +1,9 @@
 package ch05.ex;
 
+/*
+ * 2차원 배열
+ */
+
 public class Ex07 {
 
 	public static void main(String[] args) {

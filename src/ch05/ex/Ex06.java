@@ -1,5 +1,9 @@
 package ch05.ex;
 
+/*
+ * command line에서 파라미터 받기
+ */
+
 public class Ex06 {
 
 	public static void main(String[] args) {
