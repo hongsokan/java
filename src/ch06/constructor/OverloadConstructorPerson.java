@@ -1,5 +1,9 @@
 package ch06.constructor;
 
+/*
+ * 생성자도 아래처럼 오버로딩이 가능하다
+ */
+
 public class OverloadConstructorPerson {
 	String name = "아무개";
 	int age = 0;

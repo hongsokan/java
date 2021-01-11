@@ -1,5 +1,9 @@
 package ch06.constructor;
 
+/*
+ * 기본 생성자를 작성하지 않아도 생략된 기본 생성자 존재
+ */
+
 public class DefaultPerson {
 	String name;
 	int age ;

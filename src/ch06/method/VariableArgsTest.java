@@ -10,7 +10,8 @@ public class VariableArgsTest {
 		System.out.printf("파라미터 개수: %d, 총 합: %d%n",params.length,sum);
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String... args) { // 이렇게도 사용 가능
+	// public static void main(String[] args) {
 		VariableArgsTest vt = new VariableArgsTest();
 		vt.add(1, 2, 3, 4, 5);
 		vt.add(1, 2, 3);
