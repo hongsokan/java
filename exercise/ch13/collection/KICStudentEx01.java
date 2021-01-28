@@ -9,7 +9,7 @@ import java.util.*;
 // ============================
 
 
-public class StudentEx01 {
+public class KICStudentEx01 {
 
 	static Set<KICStudent> col = new HashSet();
 	
@@ -48,10 +48,10 @@ public class StudentEx01 {
 		System.out.println("학년 \t학번 \t이름 \t국어 \t영어 \t수학 \t총점");
 		System.out.println("====================================================");
 		
+		// 2)
 		for (int i = 0; i < 5; i++) {
 			System.out.println(gradeli.get(i));
 		}
-		// 2)
 	}
 }
 
@@ -75,7 +75,6 @@ class KICStudent {
 		this.math = Integer.parseInt(str[5]);
 		this.total = kor + eng + math;
 	}
-	
 	
 	@Override
 	public int hashCode() {
