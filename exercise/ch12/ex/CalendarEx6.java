@@ -17,7 +17,7 @@ class CalendarEx6 {
             
             END_DAY = eDay.get(Calendar.DATE); //31
            
-            System.out.println("      " + year +"�� " + month +"��"); 
+            System.out.println("      " + year +"년 " + month +"월"); 
             System.out.println(" SU MO TU WE TH FR SA"); 
 
             for(int i=1; i < START_DAY_OF_WEEK; i++) { 

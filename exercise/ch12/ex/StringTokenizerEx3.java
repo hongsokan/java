@@ -3,11 +3,11 @@ import java.util.*;
 
 class StringTokenizerEx3 { 
 	public static void main(String args[]) { 
-		String source = "1,��õ��,100,100,100|2,�ڼ���,95,80,90|3,���ڹ�,80,90,90";
+		String source = "1,kim,100,100,100|2,park,95,80,90|3,lee,80,90,90";
 		StringTokenizer st = new StringTokenizer(source, "|"); 
 		int ktot =0, etot=0, mtot=0;
         int k=0, e=0, m=0;
-        System.out.println("��ȣ\t �̸�\t ����\t  ����\t  ����\t  �հ� \t");
+        System.out.println("번호\t 이름\t 국어\t 영어\t 수학\t 합계 \t");
         System.out.println("=============================================");
 		while(st.hasMoreTokens()) {
 			String token = st.nextToken();
@@ -43,6 +43,6 @@ class StringTokenizerEx3 {
 			System.out.println(tot);
 		}
 		 System.out.println("=============================================");
-			System.out.print("�հ� \t \t"+ktot+"\t"+etot+"\t"+mtot+"\t"+(ktot+etot+mtot));
-	} // main�� ��
+			System.out.print("합계 \t \t"+ktot+"\t"+etot+"\t"+mtot+"\t"+(ktot+etot+mtot));
+	} // main
 }

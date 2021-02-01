@@ -40,8 +40,8 @@ class Person implements Comparable<Person> {
 	
 	@Override 
 	public int compareTo(Person o) {
+		System.out.println(age - o.age);
 		return (o.age - age) * -1;
-		
 	}
 
 	public static void main(String[] args) {

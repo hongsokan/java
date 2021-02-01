@@ -103,31 +103,67 @@ class Cookie extends Snack {
 
 
 class Buyer2 {
-	int money = 20000;
+	int money = 10000;
 	int point, cnt;
-	Food[] cart = new Food[6];
+	Food[] cart = new Food[20];
 	
 	void buy(Food f) {
+		if (money < f.price) {
+			System.out.println(f + " 구매시 잔액부족");
+			return;
+		}
+		
 		money -= f.price;
 		point += f.point;
-		System.out.println(f + "구입");
+		System.out.println(f + " : 가격 = " + f.price + " 구입");
 		cart[cnt++] = f;
 	}
 	
 	void summary() {
-		int sum = 0;
-		String productList = "";
+		int total = 0, ftotal = 0, dtotal = 0, stotal = 0;
+		int fcnt = 0, dcnt = 0, scnt = 0;
+		String flist = "", dlist = "", slist = "";
+		
 		for (Food f : cart) {
 			if (f == null) break;
-			System.out.println(f + " 가격 = " + f.price + ", 포인트= " + f.point);
-			productList += f + ", ";
-			sum += f.price;
+			total += f.price;
+			if(f instanceof Fruit) {
+				fcnt++;
+				ftotal += f.price;
+				flist += f + ",";
+			}
+			if(f instanceof Drink) {
+				dcnt++;
+				dtotal += f.price;
+				dlist += f + ",";
+			}
+			if(f instanceof Snack) {
+				scnt++;
+				stotal += f.price;
+				slist += f + ",";
+			}
 		}
+		System.out.println("총구매 금액 : " + total + ", 총구매건수 " + cnt);
+		System.out.println("과일구매 금액 : " + ftotal + ", 총구매건수 " + fcnt);
+		System.out.println("과일구매 목록 : " + flist);
+		System.out.println("음료구매 금액 : " + dtotal + ", 총구매건수 " + dcnt);
+		System.out.println("음료구매 목록 : " + dlist);
+		System.out.println("과자구매 금액 : " + stotal + ", 총구매건수 " + scnt);
+		System.out.println("과자구매 목록 : " + slist);
 		
-		productList = productList.substring(0, productList.length()-2);
-		System.out.println();
-		System.out.println("총 물품 구매액: " + sum);
-		System.out.println("총 물품 목록: " + productList);
+//		int sum = 0;
+//		String productList = "";
+//		for (Food f : cart) {
+//			if (f == null) break;
+//			System.out.println(f + " 가격 = " + f.price + ", 포인트= " + f.point);
+//			productList += f + ", ";
+//			sum += f.price;
+//		}
+//		
+//		productList = productList.substring(0, productList.length()-2);
+//		System.out.println();
+//		System.out.println("총 물품 구매액: " + sum);
+//		System.out.println("총 물품 목록: " + productList);
 	}
 }
 
@@ -137,8 +173,9 @@ public class Exam03 {
 	public static void main(String[] args) {
 		
 		Apple apple = new Apple(1000, 10.5);
-		// System.out.println("사과 가격:" + apple.price);
-		// System.out.println("사과 당도:" + apple.brix);
+		System.out.println("사과 가격:" + apple.price);
+		System.out.println("사과 당도:" + apple.brix);
+		System.out.println();
 		
 		Peach peach = new Peach(1000, 13.5);
 		Coke coke = new Coke(500, 500);
@@ -155,8 +192,8 @@ public class Exam03 {
 		b.buy(cookie);
 		System.out.println();
 		
-		System.out.println("고객 잔액:" + b.money);
-		System.out.println("고객 포인트:" + b.point);
+		System.out.println("고객 잔액 : " + b.money);
+		System.out.println("고객 포인트 : " + b.point);
 		System.out.println();
 		
 		b.summary();

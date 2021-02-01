@@ -8,10 +8,10 @@ import java.util.Scanner;
 
 public class CalendarEx3 {
 	public static void main(String[] args) throws ParseException {
-		System.out.println("ù��° ��¥�� �Է��ϼ���(yyyy-MM-dd)");
+		System.out.println("첫번째 날짜 입력(yyyy-MM-dd)");
 		Scanner scan = new Scanner(System.in);
 		String first = scan.nextLine();
-		System.out.println("�ι�° ��¥�� �Է��ϼ���(yyyy-MM-dd)");
+		System.out.println("두번째 날짜 입력(yyyy-MM-dd)");
 		String second = scan.nextLine();
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
 		Date fdate = sf.parse(first); 
@@ -19,6 +19,6 @@ public class CalendarEx3 {
 		
 		long datecnt = (sdate.getTime() 
 				- fdate.getTime())/(1000*60*60*24);
-		System.out.printf("%s -%s ������ ���� : %d\n",second,first,datecnt);
+		System.out.printf("%s -%s 일자의 차이 : %d\n",second,first,datecnt);
 		
 	}}

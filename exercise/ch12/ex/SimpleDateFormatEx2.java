@@ -14,8 +14,8 @@ public class SimpleDateFormatEx2 {
 			e.printStackTrace();
 		}
 		System.out.println(d);
-		SimpleDateFormat sf2 = new SimpleDateFormat("yyyy-MM-dd�� E���� �Դϴ�.");
-  	    System.out.println(sf2.format(d));  // Date --> Editting 
+		SimpleDateFormat sf2 = new SimpleDateFormat("yyyy-MM-dd 은 E요일.");
+  	    System.out.println(sf2.format(d));  // Date --> Editing 
 	}
 
 }

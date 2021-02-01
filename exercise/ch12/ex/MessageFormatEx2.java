@@ -8,8 +8,8 @@ class MessageFormatEx2 {
 		String msg = "INSERT INTO "+ tableName +" VALUES (''{0}'',''{1}'',{2},''{3}'');";
 
 		Object[][] arguments = {
-			{"���ڹ�","02-123-1234", "27", "07-09"},
-			{"������","032-333-1234", "33", "10-07"},
+			{"lee","02-123-1234", "27", "07-09"},
+			{"kim","032-333-1234", "33", "10-07"},
 		};
 
 		for(int i=0; i < arguments.length;i++) {

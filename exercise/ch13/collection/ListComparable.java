@@ -21,4 +21,9 @@ public class ListComparable {
 		Collections.sort(li);
 		System.out.println(li);
 	}
+	
+	static void sortMs(List<Person> li) {
+		
+	}
+
 }

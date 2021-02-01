@@ -7,7 +7,7 @@ class MessageFormatEx1 {
 		String msg = "Name: {0} \nTel: {1} \nAge:{2} \nBirthday:{3}";
 
 		Object[] arguments = {
-			"���ڹ�","02-123-1234", "27", "07-09"
+			"lee","02-123-1234", "27", "07-09"
 		};
 
 		String result = MessageFormat.format(msg, arguments);
