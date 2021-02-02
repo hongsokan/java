@@ -19,11 +19,37 @@ public class ListComparable {
 		li.add(p1);
 		System.out.println(li);
 		Collections.sort(li);
+//		sortMs(li);
+//		sort(li);
 		System.out.println(li);
 	}
 	
 	static void sortMs(List<Person> li) {
-		
+		for (int i = 0; i < li.size() - 1; i++) {
+			for (int j = 0; j < li.size()-1-i; j++) {
+				Person p1 = li.get(j);
+				Person p2 = li.get(j+1);
+				
+				if (p1.compareTo(p2) > 0) {
+					li.set(j, p2);
+					li.set(j+1, p1);
+				}
+			}
+		}
+	}
+	
+	static void sort(List<Person> li) {
+		for (int i = 0; i < li.size() - 1; i++) {
+			for (int j = 0; j < li.size()-1-i; j++) {
+				Person p1 = li.get(j);
+				Person p2 = li.get(j+1);
+				
+				if (p1.compareTo(p2) > 0) {
+					li.set(j, p2);
+					li.set(j+1, p1);
+				}
+			}
+		}
 	}
 
 }
