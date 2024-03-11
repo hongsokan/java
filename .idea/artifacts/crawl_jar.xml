@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="crawl:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/crawl_jar</output-path>
+    <root id="archive" name="crawl.jar">
+      <element id="module-output" name="crawl" />
+      <element id="library" level="project" name="test" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/crawl/lib/jsoup-1.17.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/crawl/out/artifacts/crawl_jar/crawl.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

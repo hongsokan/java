@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="crud:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/crud_jar</output-path>
+    <root id="archive" name="crud.jar">
+      <element id="module-output" name="crud" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/crud/lib/mariadb-java-client-3.3.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
