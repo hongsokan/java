@@ -1,6 +1,5 @@
 import org.jsoup.Jsoup;
 
-import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -9,14 +8,14 @@ public class Main {
 
     private static Set<String> visited = new HashSet<>();
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         final String url = args[0];
         final int depth = Integer.parseInt(args[1]);
 
         crawl(url, depth, 0);
     }
 
-    private static void crawl(String url, int maxDepth, int currentDepth) throws IOException {
+    private static void crawl(String url, int maxDepth, int currentDepth) {
         if (currentDepth >= maxDepth || visited.contains(url)) {
             return;
         }
@@ -28,8 +27,8 @@ public class Main {
 
         try {
             List<String> searchedLinks = Jsoup.connect(url).get().getElementsByTag("a").stream()
-                    .filter(element -> element.attr("href").startsWith("https://"))
                     .map(element -> element.attr("href"))
+                    .filter(href -> href.startsWith("https://") && !visited.contains(href))
                     .toList();
 
             for (String link : searchedLinks) {
