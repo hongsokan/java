@@ -30,4 +30,4 @@ bin/
 
 .idea
 
-/out
+test/
