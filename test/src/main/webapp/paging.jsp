@@ -133,7 +133,6 @@
             pageButton.addEventListener('click', function () {
                 currentPageInput.value = pageButton.textContent;
                 localStorage.setItem("current_page", pageButton.textContent);
-                ;
                 fetchList();
             });
             pagingNew.appendChild(pageButton);
@@ -145,10 +144,7 @@
         }
     }
 
-    //
-    // function goToPage(pageNumber) {
-    //
-    // }
+
 </script>
 
 </body>

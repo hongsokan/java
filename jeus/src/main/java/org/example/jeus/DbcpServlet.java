@@ -48,17 +48,25 @@ public class DbcpServlet extends HttpServlet {
             }
         } catch (SQLException e) {
             throw new RuntimeException("Error getting database connection", e);
+        } finally {
+            // 모든 리소스를 닫음
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (pt != null) {
+                    pt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException("Error closing database resources", e);
+            }
         }
         out.println("</body></html>");
     }
 
     public void destroy() {
-        try {
-            rs.close();
-            pt.close();
-            con.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
 }
