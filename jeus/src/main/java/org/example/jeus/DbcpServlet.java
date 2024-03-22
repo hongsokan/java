@@ -17,6 +17,9 @@ import java.sql.SQLException;
 public class DbcpServlet extends HttpServlet {
 
     private DataSource dataSource;
+    private Connection con;
+    private PreparedStatement pt;
+    private ResultSet rs;
 
     public void init() {
         try {
@@ -32,13 +35,13 @@ public class DbcpServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
         try {
-            Connection con = dataSource.getConnection();
+            con = dataSource.getConnection();
             con.setAutoCommit(false);
             out.println("<div>Connected to the database using dbcp</div>");
 
             String sql = "show tables from `hs.an`";
-            PreparedStatement pt = con.prepareStatement(sql);
-            ResultSet rs = pt.executeQuery();
+            pt = con.prepareStatement(sql);
+            rs = pt.executeQuery();
 
             while (rs.next()) {
                 out.println("<div>table name :" + rs.getString("tables_in_hs.an"));
@@ -50,6 +53,12 @@ public class DbcpServlet extends HttpServlet {
     }
 
     public void destroy() {
-
+        try {
+            rs.close();
+            pt.close();
+            con.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
