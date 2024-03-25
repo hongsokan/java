@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class Main {
 
-    private static Set<String> visited = new HashSet<>();
+    public static Set<String> visited = new HashSet<>();
 
     public static void main(String[] args) {
         final String url = args[0];
@@ -15,7 +15,7 @@ public class Main {
         crawl(url, depth, 0);
     }
 
-    private static void crawl(String url, int maxDepth, int currentDepth) {
+    public static void crawl(String url, int maxDepth, int currentDepth) {
         if (currentDepth >= maxDepth || visited.contains(url)) {
             return;
         }

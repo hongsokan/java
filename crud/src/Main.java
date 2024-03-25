@@ -3,10 +3,10 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class Main {
-    private static final String URL = "jdbc:mariadb://192.168.0.210:3306/hs.an";
-    private static final String USERNAME = "hs.an";
-    private static final String PASSWORD = "W0u]fyE3VXd1A5a2";
-    private static final Logger logger = Logger.getLogger(Main.class.getName());
+    public static final String URL = "jdbc:mariadb://192.168.0.210:3306/hs.an";
+    public static final String USERNAME = "hs.an";
+    public static final String PASSWORD = "W0u]fyE3VXd1A5a2";
+    public static final Logger logger = Logger.getLogger(Main.class.getName());
 
     public static void main(String[] args) throws SQLException {
         Connection conn;
@@ -40,7 +40,7 @@ public class Main {
      * 트랜잭션 보장 필요
      */
 
-    private static void crud(Connection conn) throws SQLException {
+    public static void crud(Connection conn) throws SQLException {
         Scanner sc = new Scanner(System.in);
         logger.info("명령어 입력 : 1. create (테이블 생성) / 2. insert (데이터 인서트) / 3. update (데이터 업데이트) / 4. exit (프로그램 종료)");
         logger.info("> ");
@@ -59,7 +59,7 @@ public class Main {
         }
     }
 
-    private static void createTable(Connection conn) throws SQLException {
+    public static void createTable(Connection conn) throws SQLException {
         String sql = "create table if not exists test (" +
                 "id int(10) primary key," +
                 "name varchar(32) not null," +
@@ -69,7 +69,7 @@ public class Main {
         st.executeUpdate(sql);
     }
 
-    private static void insert(Connection conn) throws SQLException {
+    public static void insert(Connection conn) throws SQLException {
         try {
             PreparedStatement insert = conn.prepareStatement("insert into test (id, name, create_date) values (?, ?, now())");
 
@@ -104,7 +104,7 @@ public class Main {
 
     }
 
-    private static ResultSet update(Connection conn) throws SQLException {
+    public static ResultSet update(Connection conn) throws SQLException {
         try {
             PreparedStatement ps = conn.prepareStatement("update test set name = ? where id = 1");
             ps.setString(1, "테스트 수정");

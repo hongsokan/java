@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 
 public class DbcpServlet extends HttpServlet {
 
-    private static final Logger logger = Logger.getLogger(Main.class.getName());
+    public static final Logger logger = Logger.getLogger(Main.class.getName());
     private Connection con;
     private DataSource dataSource;
 
